@@ -14,16 +14,15 @@ public class checkLoginAndPassword {
             if (password.length() != confirmPassword.length()) {
                 throw new WrongPasswordException(confirmPassword);
             }
+            return true;
         } catch (WrongLoginException exception) {
             System.out.println("Неверный формат логина");
-            return false;
-
         } catch (WrongPasswordException exception) {
             System.out.println("Неверный формат пароля");
             System.out.println("Пароли не совпадают");
-            return false;
+
         }
-        return true;
+        return false;
     }
 }
 
